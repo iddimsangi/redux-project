@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 // import  reducer  from './Store/reducer';
 import counterReducers from './Store/reducers/counter';
 import resultReducers from './Store/reducers/result';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import { Provider } from 'react-redux';
 const rootReducers = combineReducers({
     ctr_red: counterReducers,
@@ -22,7 +22,8 @@ const logger = store =>{
         }
     }
 }
-const store = createStore(rootReducers, applyMiddleware(logger));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(rootReducers, composeEnhancers(applyMiddleware(logger)));
 
 ReactDOM.render(<Provider store = {store}><App/></Provider>, document.getElementById('root'));
 // ReactDOM.render(<App/>, document.getElementById('root'));
