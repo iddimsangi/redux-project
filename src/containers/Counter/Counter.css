@@ -1,0 +1,28 @@
+.btn-full:link,
+.btn-full:visited{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid orange;
+    padding: 10px 20px;
+    background-color: orange;
+    border-radius: 200px;
+}
+.btn-full:hover,
+.btn-full:active{
+    background-color: rgb(224, 154, 22);
+    border: 1px solid rgb(224, 154, 22);
+    box-shadow: 2px 2px 1px #eee;
+}
+
+ul{
+    list-style: none;
+   
+}
+ul li{
+    background-color: orchid;
+    padding: 5px 10px;
+    width: 100px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
